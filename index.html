@@ -58,13 +58,6 @@
       box-shadow: 0 0 40px rgba(150, 100, 255, 0.4);
       backdrop-filter: blur(12px);
     }
-    /* New darker container */
-    .container.darker {
-      background: rgba(30, 15, 50, 0.9); /* darker, more opaque */
-      box-shadow: 0 0 30px rgba(50, 20, 120, 0.5);
-      margin-top: 2rem;
-      padding: 2rem;
-    }
 
     h1 {
       font-size: 3rem;
@@ -146,4 +139,105 @@
       border-radius: 10px;
       cursor: pointer;
       color: #c8a2ff;
-      font-famil
+      font-family: monospace;
+      transition: background 0.3s ease;
+    }
+
+    .copy-box:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .clock {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 5px 10px;
+      border-radius: 10px;
+      color: #fff;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Twinkling Stars Background -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Clock in Top Right -->
+  <div class="clock" id="clock">--:--:--</div>
+
+  <!-- Profile Card -->
+  <div class="container">
+    <h1>Ryu</h1>
+    <img src="profile.jpg" alt="Profile Picture" class="profile" />
+
+    <div class="game-title">
+      <img src="valorant.png" alt="Valorant Logo" />
+      Valorant
+    </div>
+
+    <div class="ranks">
+      <div class="rank">
+        <div class="rank-label">Current</div>
+        <img src="bronze.png" alt="Bronze Rank" />
+        <div>Bronze 2</div>
+      </div>
+      <div class="rank">
+        <div class="rank-label">Peak</div>
+        <img src="plat2.png" alt="Platinum 2 Rank" />
+        <div>Platinum 2</div>
+      </div>
+    </div>
+
+    <div class="discord">
+      <img src="dis.png" alt="Discord Icon" />
+      <div class="copy-box" onclick="copyDiscord()">itz.ryu.</div>
+    </div>
+  </div>
+
+  <!-- Star Generator Script -->
+  <script>
+    const stars = document.getElementById('stars');
+    const totalStars = 400;
+
+    for (let i = 0; i < totalStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.animationDuration = (Math.random() * 3 + 1) + 's';
+      stars.appendChild(star);
+    }
+  </script>
+
+  <!-- Clock Script -->
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const options = {
+        timeZone: 'Europe/Prague',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      };
+      const formatter = new Intl.DateTimeFormat([], options);
+      document.getElementById("clock").textContent = formatter.format(now);
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+  <!-- Copy to Clipboard Script -->
+  <script>
+    function copyDiscord() {
+      navigator.clipboard.writeText("itz.ryu.");
+      alert("Copied Discord: itz.ryu.");
+    }
+  </script>
+
+</body>
+</html>
