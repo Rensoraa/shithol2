@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="title" content="Ryu's About Me" />
+  <meta name="description" content="Here you can find my discord, and Valorant statistics" />
+  <meta name="author" content="Ryu" />
+  <meta name="theme-color" content="#c8a2ff" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About me" />
+  <meta property="og:description" content="Here you can find my Discord, and valorant Statistics" />
+  <meta property="og:image" content="https://i.imgur.com/knqgrl7.png" />
+  <meta property="og:url" content="https://itz-ryuu.github.io/site/" />
+  <title>Ryu's Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0d0b1f, #1f1433);
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      opacity: 0.8;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 5vh auto;
+      background: rgba(60, 30, 100, 0.8);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(150, 100, 255, 0.4);
+      backdrop-filter: blur(12px);
+    }
+    /* New darker container */
+    .container.darker {
+      background: rgba(30, 15, 50, 0.9); /* darker, more opaque */
+      box-shadow: 0 0 30px rgba(50, 20, 120, 0.5);
+      margin-top: 2rem;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #e0c2ff;
+      margin-bottom: 1rem;
+      animation: glow 2s infinite ease-in-out;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #c8a2ff; }
+      50% { text-shadow: 0 0 20px #e0c2ff, 0 0 30px #c8a2ff; }
+      100% { text-shadow: 0 0 5px #c8a2ff; }
+    }
+
+    img.profile {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #c8a2ff;
+      margin-bottom: 1.5rem;
+    }
+
+    .game-title {
+      font-size: 1.5rem;
+      margin-top: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .game-title img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .ranks {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 40px;
+      margin-top: 1rem;
+    }
+
+    .rank {
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .rank-label {
+      font-size: 0.85rem;
+      color: #ccc;
+      margin-bottom: 5px;
+    }
+
+    .ranks img {
+      width: 50px;
+      height: auto;
+    }
+
+    .discord {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .discord img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .copy-box {
+      display: inline-block;
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      cursor: pointer;
+      color: #c8a2ff;
+      font-famil
